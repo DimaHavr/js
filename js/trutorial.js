@@ -34,7 +34,9 @@
 // Скріпт пошуку логіну
 
 // const logins = ['pavel', 'patryk', 'dima', 'vasyl', 'oleh'];
-// const loginToFind = 'oleh';
+// const loginToFind = 'pavel';
+
+// Варіант 1
 // let message = `Логін ${loginToFind} не знайдено`;
 
 // for (const login of logins) {
@@ -45,3 +47,33 @@
 //    };
 // }
 // console.log(message);
+
+// Варіант 2
+// const message = logins.includes(loginToFind) ? `Логін ${loginToFind} знайдено` : `Логін ${loginToFind} не знайдено`;
+
+//    console.log(message);
+
+// Пошук найменьшого числа, яке не повторюються
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, -1, -99];
+
+// let smallesNumber = numbers[0];
+
+// for (const number of numbers) {
+//   if (number < smallesNumber);
+//   smallesNumber = number;
+// }
+// console.log('Найменьше число:', smallesNumber);
+
+// Пошук найменьшого числа, яке не повторюються
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, -1, -99];
+
+let largesNumber = numbers[0];
+
+for (const number of numbers) {
+  if (largesNumber > number);
+  largesNumber = number;
+}
+console.log('Найбільше число:', largesNumber);
+
