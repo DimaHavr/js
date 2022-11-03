@@ -623,41 +623,346 @@
 
 /////////////////////////////////////////////////////////////////////////////////ДЕКІЛЬКА КОЛБЕКІВ/////////////////////////////////////////
 
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, makePizza, onOrderError) {
-    for (const pizza of this.pizzas) {
-      // console.log(pizza === pizzaName);
-      if (pizza === pizzaName) {
-        return makePizza(pizzaName);
-      }
-    }
-    return onOrderError(
-      `There is no pizza with a name ${pizzaName} in the assortment.`
-    );
-  },
-};
-// Change code above this line
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, makePizza, onOrderError) {
+//     for (const pizza of this.pizzas) {
+//       // console.log(pizza === pizzaName);
+//       if (pizza === pizzaName) {
+//         return makePizza(pizzaName);
+//       }
+//     }
+//     return onOrderError(
+//       `There is no pizza with a name ${pizzaName} in the assortment.`
+//     );
+//   },
+// };
+// // Change code above this line
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
 
-// Method calls with callbacks
-// pizzaPalace.order('Smoked', makePizza, onOrderError);
-// pizzaPalace.order('Four meats', makePizza, onOrderError);
-// pizzaPalace.order('Big Mike', makePizza, onOrderError);
-// pizzaPalace.order('Vienna', makePizza, onOrderError);
+// // Method calls with callbacks
+// // pizzaPalace.order('Smoked', makePizza, onOrderError);
+// // pizzaPalace.order('Four meats', makePizza, onOrderError);
+// // pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// // pizzaPalace.order('Vienna', makePizza, onOrderError);
 
-console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
-console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
-console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
-console.log(pizzaPalace.order('Big Oleh', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Oleh', makePizza, onOrderError));
 
-// /////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////FOREACH(CALLBACK)////////////////////////////////////////////
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+//   numbers.forEach(function (element) {
+//     if (element > value) {
+//       return filteredNumbers.push(element);
+//     }
+//   });
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+
+////////////////////////////////////////////////////////////////////////ЧИСТІ ФУНКЦІ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// function changeEven(numbers, value) {
+//   const newArray = [];
+//   numbers.forEach(number => {
+//     if (number % 2 === 0) {
+//       newArray.push(number + value);
+//     } else newArray.push(number);
+//   });
+//   return newArray;
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
+
+///////////////////////////////////////////////////////////////////////flatMap ДЛЯ МАСИВІВ/////////////////////////////////////
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['adventure', 'history'],
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     genres: ['fiction'],
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     genres: ['horror', 'mysticism'],
+//   },
+// ];
+// // Change code below this line
+
+// const genres = books.flatMap(book => book.genres);
+
+//////////////////////////////////////////////////////////////////
+// 'use strict';
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
+////////////////////////////////////////////////////ЗАДАЧА. СПИСОК ДРУЗІВ/////////////////////////////////////////
+// const getFriends = users =>
+//   users
+//     .flatMap(({ friends }) => friends)
+//     .filter((friends, index, array) => index === array.indexOf(friends));
+// console.log(getFriends(users));
+
+//////////////////////////////////////////////////////////////////////АКТИВНІ КОРИСТУВАЧІ//////////////////////////
+
+// const getActiveUsers = users => users.filter(({ isActive }) => isActive);
+// console.log(getActiveUsers(users));
+
+/////////////////////////////////////////////////////////////////МЕТОДИ ДОДАВАННЯ, ВИДАЛЕННЯ ЕЛЕМЕНТІВ///////////////////////////////////////////////////
+
+// class Storage {
+//   constructor(items) {
+//     console.log(this);
+//     this.items = items;
+//   }
+//   // Change code below this line
+//   getItems() {
+//     return this.items;
+//   }
+//   addItem(newItem) {
+//     return this.items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     return this.items.splice(this.items.indexOf(itemToRemove), 1);
+//   }
+//   // Change code above this line
+// }
+
+// // Change code above this line
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// class StringBuilder {
+//   constructor(initialValue) {
+//     this.value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.value;
+//   }
+
+//   padEnd(str) {
+//     this.value = this.value + str;
+//   }
+
+//   padStart(str) {
+//     this.value = str + this.value;
+//   }
+
+//   padBoth(str) {
+//     this.value = str + this.value + str;
+//   }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
+
+///////////////////////////////////////////////////////////////////////СТАТИЧНІ ВЛАСТИВОСТІ///////////////////////////////////////////////////////////////////
+// class Car {
+//   // Change code below this line
+//   static Prices = {
+//     MAX_PRICE: 50000,
+//   };
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     console.log(Car.Prices.MAX_PRICE);
+//     this.#price = newPrice <= Car.Prices.MAX_PRICE ? newPrice : this.#price;
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+////////////////////////////////////////////////////////////////////////СТАТИЧНІ МЕТОДИ//////////////////////////////////////////
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this line
+
+//   static checkPrice (price){
+//   return price > Car.#MAX_PRICE ? "Error! Price exceeds the maximum" : "Success! Price is within acceptable limits";
+//   }
+
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+//////////////////////////////////////////////////////////////МЕТОДИ ДОЧІРНЬОГО КЛАСУ////////////////////////////////////////////////
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, accessLevel,blacklistedEmails }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//     this.blacklistedEmails = [];
+//   }
+//   blacklist(email){
+//   return this.blacklistedEmails.push(email);
+//   }
+
+//   isBlacklisted(email){
+//     return this.blacklistedEmails.includes(email);
+//   }
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
